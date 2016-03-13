@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo,GitHub Pages," />
+  <meta name="keywords" content="LeetCode,Java," />
 
 
 
@@ -57,16 +57,16 @@
 
 
 
-<meta name="description" content="IntroductionThis articles will show you how to setup a blog with Hexo, a blog framework built with Node.js, and publish it to GitHub.Setting up Hexo and host it in GitHubDependenciesNode.js https://no">
+<meta name="description" content="Question[LeetCode 66] Given a non-negative number represented as an array of digits, plus one to the number.SubmissionJava Submission123456789101112131415161718192021222324252627public class Solution">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Setting up a blog with Hexo using GitHub Pages">
-<meta property="og:url" content="http://ckitt.githun.io/2016/03/12/Setting-up-a-blog-with-Hexo-using-GitHub-Pages/index.html">
+<meta property="og:title" content="LeetCode OJ 66 Plus One">
+<meta property="og:url" content="http://ckitt.githun.io/2016/03/13/LeetCode-OJ-66-Plus-One/index.html">
 <meta property="og:site_name" content="ckitt's Notes">
-<meta property="og:description" content="IntroductionThis articles will show you how to setup a blog with Hexo, a blog framework built with Node.js, and publish it to GitHub.Setting up Hexo and host it in GitHubDependenciesNode.js https://no">
-<meta property="og:updated_time" content="2016-03-12T08:38:44.040Z">
+<meta property="og:description" content="Question[LeetCode 66] Given a non-negative number represented as an array of digits, plus one to the number.SubmissionJava Submission123456789101112131415161718192021222324252627public class Solution">
+<meta property="og:updated_time" content="2016-03-13T05:34:21.760Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Setting up a blog with Hexo using GitHub Pages">
-<meta name="twitter:description" content="IntroductionThis articles will show you how to setup a blog with Hexo, a blog framework built with Node.js, and publish it to GitHub.Setting up Hexo and host it in GitHubDependenciesNode.js https://no">
+<meta name="twitter:title" content="LeetCode OJ 66 Plus One">
+<meta name="twitter:description" content="Question[LeetCode 66] Given a non-negative number represented as an array of digits, plus one to the number.SubmissionJava Submission123456789101112131415161718192021222324252627public class Solution">
 
 
 
@@ -84,7 +84,7 @@
   };
 </script>
 
-  <title> Setting up a blog with Hexo using GitHub Pages | ckitt's Notes </title>
+  <title> LeetCode OJ 66 Plus One | ckitt's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -213,7 +213,7 @@
             
             
               
-                Setting up a blog with Hexo using GitHub Pages
+                LeetCode OJ 66 Plus One
               
             
           </h1>
@@ -225,8 +225,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-12T16:24:00+08:00" content="2016-03-12">
-              2016-03-12
+            <time itemprop="dateCreated" datetime="2016-03-13T13:33:17+08:00" content="2016-03-13">
+              2016-03-13
             </time>
           </span>
 
@@ -236,8 +236,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/12/Setting-up-a-blog-with-Hexo-using-GitHub-Pages/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/12/Setting-up-a-blog-with-Hexo-using-GitHub-Pages/" itemprop="commentsCount"></span>
+                <a href="/2016/03/13/LeetCode-OJ-66-Plus-One/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/13/LeetCode-OJ-66-Plus-One/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -259,16 +259,7 @@
       
 
       
-        <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>This articles will show you how to setup a blog with <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>, a blog framework built with Node.js, and publish it to GitHub.</p><h1 id="Setting-up-Hexo-and-host-it-in-GitHub"><a href="#Setting-up-Hexo-and-host-it-in-GitHub" class="headerlink" title="Setting up Hexo and host it in GitHub"></a>Setting up Hexo and host it in GitHub</h1><h2 id="Dependencies"><a href="#Dependencies" class="headerlink" title="Dependencies"></a>Dependencies</h2><ol><li>Node.js <a href="https://nodejs.org" target="_blank" rel="external">https://nodejs.org</a></li><li>Git Bash <a href="https://git-scm.com" target="_blank" rel="external">https://git-scm.com</a> or others git tools available online</li></ol><h2 id="Install-Hexo"><a href="#Install-Hexo" class="headerlink" title="Install Hexo"></a>Install Hexo</h2><ol><li><p>Install Hexo, run the following command in git-bash</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /your hexo directory/</span><br><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure><blockquote><p>make sure you included the npm directory in your <code>PATH</code> variable</p><pre><code>;C:\Program Files\nodejs\node_modules\npm
-</code></pre></blockquote></li><li><p>Once Hexo is installed, initialize Hexo</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure><blockquote><p>following files will be created</p><pre><code>.
-├── _config.yml
-├── package.json
-├── scaffolds
-├── source
-|   ├── _drafts
-|   └── _posts
-└── themes
-</code></pre></blockquote></li><li><p>The site is then ready for deploy</p></li></ol><h2 id="Start-Hexo-in-local-environment"><a href="#Start-Hexo-in-local-environment" class="headerlink" title="Start Hexo in local environment"></a>Start Hexo in local environment</h2><ul><li><p>After installing Hexo, you might want to have a look of the website, you can run the following command</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></li><li><p>Server will be started and it can be accessed by using <code>http://localhost:4000</code></p></li></ul><h2 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h2><ul><li>Generating static files with the following command<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></li></ul><h2 id="Deploy-to-GitHub-Pages"><a href="#Deploy-to-GitHub-Pages" class="headerlink" title="Deploy to GitHub Pages"></a>Deploy to GitHub Pages</h2><ol><li><p>create a new github repository with name <code>(you github username).github.io</code></p></li><li><p>update global setting of hexo <code>_config.yml</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: link to your github repository</span><br></pre></td></tr></table></figure></li><li><p>Then run the following command to deploy your Hexo site to gitHub</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></li><li><p>you will be able you visit the site with <code>http://(you github username).github.io</code></p></li></ol><hr><h1 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h1><h2 id="Adding-a-new-post"><a href="#Adding-a-new-post" class="headerlink" title="Adding a new post"></a>Adding a new post</h2><ol><li><p>Run the following command</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new post <span class="string">"My First Blog Post"</span></span><br></pre></td></tr></table></figure></li><li><p>start blogging by editing the newly created markdown file in <code>&lt;Hexo directory&gt;/source/_posts</code></p></li><li><p>regenerate the static files</p></li><li><p>deploy the changes to remote server if needed</p></li></ol><h2 id="Deleting-an-existing-post"><a href="#Deleting-an-existing-post" class="headerlink" title="Deleting an existing post"></a>Deleting an existing post</h2><ol><li>remove the unwanted post in <code>&lt;Hexo directory&gt;/source/_posts</code></li></ol><h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><ol><li>Hexo <a href="http://hexo.io" target="_blank" rel="external">http://hexo.io</a></li><li>GitHub Pages <a href="https://pages.github.com" target="_blank" rel="external">https://pages.github.com</a></li></ol>
+        <h1 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h1><p>[<a href="https://leetcode.com/problems/plus-one" target="_blank" rel="external">LeetCode 66</a>] Given a non-negative number represented as an array of digits, plus one to the number.</p><h1 id="Submission"><a href="#Submission" class="headerlink" title="Submission"></a>Submission</h1><figure class="highlight java"><figcaption><span>Java Submission</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] plusOne(<span class="keyword">int</span>[] digits) &#123;</span><br><span class="line">        <span class="keyword">boolean</span> allNine = <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; digits.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (digits[i] != <span class="number">9</span>) &#123;</span><br><span class="line">                allNine = <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (allNine) &#123;</span><br><span class="line">            <span class="keyword">int</span>[] newNumber = <span class="keyword">new</span> <span class="keyword">int</span>[digits.length+<span class="number">1</span>];</span><br><span class="line">            newNumber[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">return</span> newNumber;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = digits.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">                <span class="keyword">if</span> (digits[i] == <span class="number">9</span>) &#123;</span><br><span class="line">                    digits[i] = <span class="number">0</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    digits[i]++;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> digits;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -282,9 +273,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo/" rel="tag">#Hexo</a>
+            <a href="/tags/LeetCode/" rel="tag">#LeetCode</a>
           
-            <a href="/tags/GitHub-Pages/" rel="tag">#GitHub Pages</a>
+            <a href="/tags/Java/" rel="tag">#Java</a>
           
         </div>
       
@@ -293,13 +284,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/03/12/LeetCode-OJ-133-Clone-Graph/" rel="next" title="LeetCode 133 Clone Graph">
+                <i class="fa fa-chevron-left"></i> LeetCode 133 Clone Graph
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/12/LeetCode-OJ-133-Clone-Graph/" rel="prev" title="LeetCode 133 Clone Graph">
-                LeetCode 133 Clone Graph <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -427,7 +418,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Setting-up-Hexo-and-host-it-in-GitHub"><span class="nav-number">2.</span> <span class="nav-text">Setting up Hexo and host it in GitHub</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Dependencies"><span class="nav-number">2.1.</span> <span class="nav-text">Dependencies</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Install-Hexo"><span class="nav-number">2.2.</span> <span class="nav-text">Install Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Start-Hexo-in-local-environment"><span class="nav-number">2.3.</span> <span class="nav-text">Start Hexo in local environment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">2.4.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deploy-to-GitHub-Pages"><span class="nav-number">2.5.</span> <span class="nav-text">Deploy to GitHub Pages</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Usage"><span class="nav-number">3.</span> <span class="nav-text">Usage</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Adding-a-new-post"><span class="nav-number">3.1.</span> <span class="nav-text">Adding a new post</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deleting-an-existing-post"><span class="nav-number">3.2.</span> <span class="nav-text">Deleting an existing post</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#References"><span class="nav-number">4.</span> <span class="nav-text">References</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Question"><span class="nav-number">1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Submission"><span class="nav-number">2.</span> <span class="nav-text">Submission</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -695,9 +686,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'ckittNotes';
-      var disqus_identifier = '2016/03/12/Setting-up-a-blog-with-Hexo-using-GitHub-Pages/';
-      var disqus_title = 'Setting up a blog with Hexo using GitHub Pages';
-      var disqus_url = 'http://ckitt.githun.io/2016/03/12/Setting-up-a-blog-with-Hexo-using-GitHub-Pages/';
+      var disqus_identifier = '2016/03/13/LeetCode-OJ-66-Plus-One/';
+      var disqus_title = 'LeetCode OJ 66 Plus One';
+      var disqus_url = 'http://ckitt.githun.io/2016/03/13/LeetCode-OJ-66-Plus-One/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
