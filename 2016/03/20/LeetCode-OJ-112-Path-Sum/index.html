@@ -57,16 +57,16 @@
 
 
 
-<meta name="description" content="Question[LeetCode 100] Given two binary trees, write a function to check if they are equal or not.SubmissionJava Submission1234567891011121314151617/** * Definition for a binary tree node. * public cl">
+<meta name="description" content="Question[LeetCode 112] Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.SubmissionJava Submission1234">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode OJ 100 Same Tree">
-<meta property="og:url" content="http://ckitt.github.io/2016/03/15/LeetCode-OJ-100-Same-Tree/index.html">
+<meta property="og:title" content="LeetCode OJ 112 Path Sum">
+<meta property="og:url" content="http://ckitt.github.io/2016/03/20/LeetCode-OJ-112-Path-Sum/index.html">
 <meta property="og:site_name" content="ckitt's Notes">
-<meta property="og:description" content="Question[LeetCode 100] Given two binary trees, write a function to check if they are equal or not.SubmissionJava Submission1234567891011121314151617/** * Definition for a binary tree node. * public cl">
-<meta property="og:updated_time" content="2016-03-15T14:21:48.758Z">
+<meta property="og:description" content="Question[LeetCode 112] Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.SubmissionJava Submission1234">
+<meta property="og:updated_time" content="2016-03-20T06:02:46.522Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode OJ 100 Same Tree">
-<meta name="twitter:description" content="Question[LeetCode 100] Given two binary trees, write a function to check if they are equal or not.SubmissionJava Submission1234567891011121314151617/** * Definition for a binary tree node. * public cl">
+<meta name="twitter:title" content="LeetCode OJ 112 Path Sum">
+<meta name="twitter:description" content="Question[LeetCode 112] Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.SubmissionJava Submission1234">
 
 
 
@@ -84,7 +84,7 @@
   };
 </script>
 
-  <title> LeetCode OJ 100 Same Tree | ckitt's Notes </title>
+  <title> LeetCode OJ 112 Path Sum | ckitt's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -213,7 +213,7 @@
             
             
               
-                LeetCode OJ 100 Same Tree
+                LeetCode OJ 112 Path Sum
               
             
           </h1>
@@ -225,8 +225,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-15T22:19:28+08:00" content="2016-03-15">
-              2016-03-15
+            <time itemprop="dateCreated" datetime="2016-03-20T14:00:21+08:00" content="2016-03-20">
+              2016-03-20
             </time>
           </span>
 
@@ -236,8 +236,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/15/LeetCode-OJ-100-Same-Tree/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/15/LeetCode-OJ-100-Same-Tree/" itemprop="commentsCount"></span>
+                <a href="/2016/03/20/LeetCode-OJ-112-Path-Sum/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/20/LeetCode-OJ-112-Path-Sum/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -259,7 +259,7 @@
       
 
       
-        <h1 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h1><p>[<a href="https://leetcode.com/problems/same-tree/" target="_blank" rel="external">LeetCode 100</a>] Given two binary trees, write a function to check if they are equal or not.</p><h1 id="Submission"><a href="#Submission" class="headerlink" title="Submission"></a>Submission</h1><figure class="highlight java"><figcaption><span>Java Submission</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * public class TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode left;</span><br><span class="line"> *     TreeNode right;</span><br><span class="line"> *     TreeNode(int x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSameTree</span><span class="params">(TreeNode p, TreeNode q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (p == <span class="keyword">null</span> &amp;&amp; q == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (p == <span class="keyword">null</span> || q == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (p.val != q.val) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">return</span> (isSameTree(p.left, q.left) &amp;&amp; isSameTree(p.right, q.right));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h1><p>[<a href="https://leetcode.com/problems/path-sum/" target="_blank" rel="external">LeetCode 112</a>] Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.</p><h1 id="Submission"><a href="#Submission" class="headerlink" title="Submission"></a>Submission</h1><figure class="highlight java"><figcaption><span>Java Submission</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * public class TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode left;</span><br><span class="line"> *     TreeNode right;</span><br><span class="line"> *     TreeNode(int x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasPathSum</span><span class="params">(TreeNode root, <span class="keyword">int</span> sum)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (root.left == <span class="keyword">null</span> &amp;&amp; root.right == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> (root.val == sum);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> hasPathSum(root.left, sum - root.val) || hasPathSum(root.right, sum - root.val);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -284,16 +284,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/13/LeetCode-OJ-258-Add-Digits/" rel="next" title="LeetCode 258 Add Digits">
-                <i class="fa fa-chevron-left"></i> LeetCode 258 Add Digits
+              <a href="/2016/03/19/Creating-Chart-with-D3-js/" rel="next" title="Creating Chart with D3.js">
+                <i class="fa fa-chevron-left"></i> Creating Chart with D3.js
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/03/17/LeetCode-OJ-334-Increasing-Triplet-Subsequence/" rel="prev" title="LeetCode OJ 334 Increasing Triplet Subsequence">
-                LeetCode OJ 334 Increasing Triplet Subsequence <i class="fa fa-chevron-right"></i>
+              <a href="/2016/03/20/LeetCode-OJ-153-Find-Minimum-in-Rotated-Sorted-Array/" rel="prev" title="LeetCode OJ 153 Find Minimum in Rotated Sorted Array">
+                LeetCode OJ 153 Find Minimum in Rotated Sorted Array <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -690,9 +690,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'ckittNotes';
-      var disqus_identifier = '2016/03/15/LeetCode-OJ-100-Same-Tree/';
-      var disqus_title = 'LeetCode OJ 100 Same Tree';
-      var disqus_url = 'http://ckitt.github.io/2016/03/15/LeetCode-OJ-100-Same-Tree/';
+      var disqus_identifier = '2016/03/20/LeetCode-OJ-112-Path-Sum/';
+      var disqus_title = 'LeetCode OJ 112 Path Sum';
+      var disqus_url = 'http://ckitt.github.io/2016/03/20/LeetCode-OJ-112-Path-Sum/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');

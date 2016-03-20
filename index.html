@@ -60,7 +60,7 @@
 <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="ckitt's Notes">
-<meta property="og:url" content="http://ckitt.githun.io/index.html">
+<meta property="og:url" content="http://ckitt.github.io/index.html">
 <meta property="og:site_name" content="ckitt's Notes">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -215,6 +215,386 @@
             
               
                 
+                <a class="post-title-link" href="/2016/03/20/LeetCode-OJ-153-Find-Minimum-in-Rotated-Sorted-Array/" itemprop="url">
+                  LeetCode OJ 153 Find Minimum in Rotated Sorted Array
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-03-20T16:00:31+08:00" content="2016-03-20">
+              2016-03-20
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/20/LeetCode-OJ-153-Find-Minimum-in-Rotated-Sorted-Array/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/20/LeetCode-OJ-153-Find-Minimum-in-Rotated-Sorted-Array/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h1><p>[<a href="https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/" target="_blank" rel="external">LeetCode 153</a>] Suppose a sorted array is rotated at some pivot unknown to you beforehand.</p><h1 id="Submission"><a href="#Submission" class="headerlink" title="Submission"></a>Submission</h1><p>Using binary search, with $O(nLogn)$ running time.</p><figure class="highlight java"><figcaption><span>Java Submission</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findMin</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> lo = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> hi = nums.length-<span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (lo &lt; hi) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (lo + hi) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] &gt; nums[hi] &amp;&amp; nums[mid] &gt;= nums[lo]) &#123;</span><br><span class="line">                lo = mid + <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                hi = mid;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums[hi];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/20/LeetCode-OJ-112-Path-Sum/" itemprop="url">
+                  LeetCode OJ 112 Path Sum
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-03-20T14:00:21+08:00" content="2016-03-20">
+              2016-03-20
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/20/LeetCode-OJ-112-Path-Sum/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/20/LeetCode-OJ-112-Path-Sum/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h1><p>[<a href="https://leetcode.com/problems/path-sum/" target="_blank" rel="external">LeetCode 112</a>] Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.</p><h1 id="Submission"><a href="#Submission" class="headerlink" title="Submission"></a>Submission</h1><figure class="highlight java"><figcaption><span>Java Submission</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * public class TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode left;</span><br><span class="line"> *     TreeNode right;</span><br><span class="line"> *     TreeNode(int x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasPathSum</span><span class="params">(TreeNode root, <span class="keyword">int</span> sum)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (root.left == <span class="keyword">null</span> &amp;&amp; root.right == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> (root.val == sum);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> hasPathSum(root.left, sum - root.val) || hasPathSum(root.right, sum - root.val);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/19/Creating-Chart-with-D3-js/" itemprop="url">
+                  Creating Chart with D3.js
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-03-19T16:45:53+08:00" content="2016-03-19">
+              2016-03-19
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/19/Creating-Chart-with-D3-js/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/19/Creating-Chart-with-D3-js/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h1><p>Objective of this post is to try to understand</p><h1 id="Before"><a href="#Before" class="headerlink" title="Before"></a>Before</h1><p>Include the following snippet in the html files<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"//d3js.org/d3.v3.min.js"</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p><h1 id="Beginning-the-D3-jouney…"><a href="#Beginning-the-D3-jouney…" class="headerlink" title="Beginning the D3 jouney…"></a>Beginning the D3 jouney…</h1><p>Start by a Hello World example<br><figure class="highlight javascript"><figcaption><span>javascript</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> section = d3.select(<span class="string">".first"</span>);</span><br><span class="line"><span class="keyword">var</span> div = section.append(<span class="string">"div"</span>);</span><br><span class="line">div.html(<span class="string">"Hello world"</span>);</span><br></pre></td></tr></table></figure></p><figure class="highlight html"><figcaption><span>html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"first"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure><h2 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h2><hr><div class="first"></div><hr><h1 id="Building-a-bar-chart"><a href="#Building-a-bar-chart" class="headerlink" title="Building a bar chart"></a>Building a bar chart</h1><figure class="highlight javascript"><figcaption><span>javascript</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = [<span class="number">4</span>, <span class="number">8</span>, <span class="number">15</span>, <span class="number">16</span>, <span class="number">23</span>, <span class="number">42</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> x = d3.scale.linear()</span><br><span class="line">    .domain([<span class="number">0</span>, d3.max(data)])</span><br><span class="line">    .range([<span class="number">0</span>, <span class="number">420</span>]);</span><br><span class="line"></span><br><span class="line">d3.select(<span class="string">".chart"</span>)</span><br><span class="line">    .selectAll(<span class="string">"div"</span>)</span><br><span class="line">        .data(data)</span><br><span class="line">   .enter().append(<span class="string">"div"</span>)</span><br><span class="line">        .style(<span class="string">"width"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123; <span class="keyword">return</span> x(d) + <span class="string">"px"</span>; &#125;)</span><br><span class="line">        .text(<span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123; <span class="keyword">return</span> d; &#125;);</span><br></pre></td></tr></table></figure><figure class="highlight html"><figcaption><span>html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"chart"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure><figure class="highlight css"><figcaption><span>css</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.chart</span> <span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">font</span>: <span class="number">10px</span> sans-serif;</span><br><span class="line">    <span class="attribute">background-color</span>: steelblue;</span><br><span class="line">    <span class="attribute">text-align</span>: right;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">3px</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">1px</span>;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="Result-1"><a href="#Result-1" class="headerlink" title="Result"></a>Result</h2><hr><div class="chart"></div><hr><h1 id="Bar-chart-with-SVG"><a href="#Bar-chart-with-SVG" class="headerlink" title="Bar chart with SVG"></a>Bar chart with SVG</h1><figure class="highlight javascript"><figcaption><span>javascript</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = [<span class="number">4</span>, <span class="number">8</span>, <span class="number">15</span>, <span class="number">16</span>, <span class="number">23</span>, <span class="number">42</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> width = <span class="number">420</span>;</span><br><span class="line"><span class="keyword">var</span> barHeight = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> x = d3.scale.linear()</span><br><span class="line">    .domain([<span class="number">0</span>, d3.max(data)])</span><br><span class="line">    .range([<span class="number">0</span>, width]);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> chart = d3.select(<span class="string">".svgChart"</span>)</span><br><span class="line">    .attr(<span class="string">"width"</span>, width)</span><br><span class="line">    .attr(<span class="string">"height"</span>, barHeight * data.length);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> bar = chart.selectAll(<span class="string">"g"</span>)</span><br><span class="line">        .data(data)</span><br><span class="line">    .enter().append(<span class="string">"g"</span>)</span><br><span class="line">        .attr(<span class="string">"transform"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">d, i</span>) </span>&#123; <span class="keyword">return</span> <span class="string">"translate(0, "</span> + i * barHeight + <span class="string">")"</span>; &#125;)</span><br><span class="line"></span><br><span class="line">bar.append(<span class="string">"rect"</span>)</span><br><span class="line">    .attr(<span class="string">"width"</span>, x)</span><br><span class="line">    .attr(<span class="string">"height"</span>, barHeight - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">bar.append(<span class="string">"text"</span>)</span><br><span class="line">    .attr(<span class="string">"x"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123; <span class="keyword">return</span> x(d) - <span class="number">3</span>; &#125;)</span><br><span class="line">    .attr(<span class="string">"y"</span>, barHeight / <span class="number">2</span>)</span><br><span class="line">    .attr(<span class="string">"dy"</span>, <span class="string">".35em"</span>)</span><br><span class="line">    .text(<span class="function"><span class="keyword">function</span>(<span class="params">d</span>) </span>&#123; <span class="keyword">return</span> d; &#125;);</span><br></pre></td></tr></table></figure><figure class="highlight html"><figcaption><span>html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">class</span>=<span class="string">"svgChart"</span>&gt;</span><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br></pre></td></tr></table></figure><figure class="highlight css"><figcaption><span>css</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.svgChart</span> <span class="selector-tag">rect</span> &#123;</span><br><span class="line">    <span class="attribute">fill</span>: steelblue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.svgChart</span> <span class="selector-tag">text</span> &#123;</span><br><span class="line">    <span class="attribute">fill</span>: white;</span><br><span class="line">    <span class="attribute">font</span>: <span class="number">10px</span> sens-serif;</span><br><span class="line">    <span class="attribute">text-anchor</span>: end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="Result-2"><a href="#Result-2" class="headerlink" title="Result"></a>Result</h2><hr><svg class="svgChart"/><hr><h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><ol><li>Mike Bostock <a href="https://bost.ocks.org/mike/bar/" target="_blank" rel="external">Let’s Make a Bar Chart</a></li></ol><style>.chart div{font:10px sans-serif;background-color:#4682b4;text-align:right;padding:3px;margin:1px;color:#fff}.svgChart rect{fill:#4682b4}.svgChart text{fill:#fff;font:10px sens-serif;text-anchor:end}</style><script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script><script>var section=d3.select(".first"),div=section.append("div");div.html("Hello world");var data=[4,8,15,16,23,42],x1=d3.scale.linear().domain([0,d3.max(data)]).range([0,420]);d3.select(".chart").selectAll("div").data(data).enter().append("div").style("width",function(t){return x1(t)+"px"}).text(function(t){return t});var width=420,barHeight=20,x2=d3.scale.linear().domain([0,d3.max(data)]).range([0,width]),chart=d3.select(".svgChart").attr("width",width).attr("height",barHeight*data.length),bar=chart.selectAll("g").data(data).enter().append("g").attr("transform",function(t,a){return"translate(0, "+a*barHeight+")"});bar.append("rect").attr("width",x2).attr("height",barHeight-1),bar.append("text").attr("x",function(t){return x2(t)-3}).attr("y",barHeight/2).attr("dy",".35em").text(function(t){return t});</script>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/19/LeetCode-OJ-300-Longest-Increasing-Subsequence/" itemprop="url">
+                  LeetCode OJ 300 Longest Increasing Subsequence
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-03-19T11:51:17+08:00" content="2016-03-19">
+              2016-03-19
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/19/LeetCode-OJ-300-Longest-Increasing-Subsequence/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/19/LeetCode-OJ-300-Longest-Increasing-Subsequence/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h1><p>[<a href="https://leetcode.com/problems/longest-increasing-subsequence/" target="_blank" rel="external">LeetCode 300</a>] Given an unsorted array of integers, find the length of longest increasing subsequence.</p><h1 id="Submission"><a href="#Submission" class="headerlink" title="Submission"></a>Submission</h1><p>Similar to <a href="/2016/03/17/LeetCode-OJ-334-Increasing-Triplet-Subsequence/" title="[LeetCode 334]">[LeetCode 334]</a>, solve the question by using dynamic programming, and the algorithm run in $O(n^2)$ time and can be speed up to $O(nlogn)$ by using binary search.</p><h2 id="Solve-with-dynamic-programming"><a href="#Solve-with-dynamic-programming" class="headerlink" title="Solve with dynamic programming"></a>Solve with dynamic programming</h2><p>The easiest solution which take $O(n^2)$ running time<br><figure class="highlight java"><figcaption><span>Java Submission</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLIS</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] length = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            length[i] = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (nums[i] &gt; nums[j] &amp;&amp; length[j] + <span class="number">1</span> &gt; length[i]) &#123;</span><br><span class="line">                    length[i] = length[j] + <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> maxLength = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (length[i] &gt; maxLength) &#123;</span><br><span class="line">                maxLength = length[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxLength;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2 id="Solve-with-binary-search"><a href="#Solve-with-binary-search" class="headerlink" title="Solve with binary search"></a>Solve with binary search</h2><p>By using binary search the running time can be reduced to $O(nlogn)$</p><figure class="highlight java"><figcaption><span>Java Submission</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLIS</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> maxLength = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span>[] lastIndex = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length+<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> lo = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">int</span> hi = maxLength;</span><br><span class="line">            <span class="keyword">while</span> (lo &lt;= hi) &#123;</span><br><span class="line">                <span class="keyword">int</span> mid = (lo + hi) / <span class="number">2</span>;</span><br><span class="line">                <span class="keyword">if</span> (nums[lastIndex[mid]] &lt; nums[i]) &#123;</span><br><span class="line">                    lo = mid + <span class="number">1</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    hi = mid - <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">int</span> newLength = lo;</span><br><span class="line"></span><br><span class="line">            lastIndex[newLength] = i;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (newLength &gt; maxLength) &#123;</span><br><span class="line">                maxLength = newLength;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> maxLength;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h3><p>Using an addition array <code>lastIndex</code> to store the index of the last elements of possible increasing subsequences in <code>nums</code>, <code>lastIndex[j]</code> representing the index of the smallest elements in <code>nums</code> in the subsequences with <code>length = j</code>. <code>maxLength</code> will be used to mark the maximum length of the increasing subsequence in the current iteration.</p><img src="/2016/03/19/LeetCode-OJ-300-Longest-Increasing-Subsequence/img1.png" alt="nums = {9, 8, 2, 5, 3, 7, 19, 11, 9} and i = 8" title="nums = {9, 8, 2, 5, 3, 7, 19, 11, 9} and i = 8"><p>When <code>maxLength = 5</code>, this</p><table><thead><tr><th><code>i</code></th><th><code>lastIndex[i]</code></th><th>Representing Sequence</th></tr></thead><tbody><tr><td>0</td><td>-</td><td>-</td></tr><tr><td>1</td><td>2</td><td>2</td></tr><tr><td>2</td><td>4</td><td>2, 3</td></tr><tr><td>3</td><td>5</td><td>2, 3, 7</td></tr><tr><td>5</td><td>6</td><td>2, 3, 6</td></tr></tbody></table><p>For each iteration, we would like to know whether <code>nums[i]</code> will generate a longer/better increasing subsequences. By using binary search, to find the maximum length <code>l</code> of a subsequences where its last number is just smaller than <code>nums[i]</code>, and because the last value of the sequence represented by <code>lastIndex[l+1]</code> is less than the <code>nums[i]</code> (i.e <code>nums[lastIndex[l+1]] &gt; nums[i]</code>), thus, it generate a better increasing subsequences with <code>length = l+1</code>, and <code>lastIndex[l+1]</code> will be updated. If <code>l+1</code> is greater than the current maximun length, it indicates that a longer increasing subsequence can be found.</p><h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><ol><li>Longest Increasing Subsequence <a href="https://en.wikipedia.org/wiki/Longest_increasing_subsequence" target="_blank" rel="external">https://en.wikipedia.org/wiki/Longest_increasing_subsequence</a></li></ol>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/17/LeetCode-OJ-334-Increasing-Triplet-Subsequence/" itemprop="url">
                   LeetCode OJ 334 Increasing Triplet Subsequence
                 </a>
@@ -289,493 +669,13 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/15/LeetCode-OJ-100-Same-Tree/" itemprop="url">
-                  LeetCode OJ 100 Same Tree
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-15T22:19:28+08:00" content="2016-03-15">
-              2016-03-15
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/15/LeetCode-OJ-100-Same-Tree/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/15/LeetCode-OJ-100-Same-Tree/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h1><p>[<a href="https://leetcode.com/problems/same-tree/" target="_blank" rel="external">LeetCode 100</a>] Given two binary trees, write a function to check if they are equal or not.</p><h1 id="Submission"><a href="#Submission" class="headerlink" title="Submission"></a>Submission</h1><figure class="highlight java"><figcaption><span>Java Submission</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * public class TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode left;</span><br><span class="line"> *     TreeNode right;</span><br><span class="line"> *     TreeNode(int x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSameTree</span><span class="params">(TreeNode p, TreeNode q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (p == <span class="keyword">null</span> &amp;&amp; q == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (p == <span class="keyword">null</span> || q == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (p.val != q.val) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">return</span> (isSameTree(p.left, q.left) &amp;&amp; isSameTree(p.right, q.right));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/13/LeetCode-OJ-258-Add-Digits/" itemprop="url">
-                  LeetCode 258 Add Digits
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-13T13:58:13+08:00" content="2016-03-13">
-              2016-03-13
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/13/LeetCode-OJ-258-Add-Digits/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/13/LeetCode-OJ-258-Add-Digits/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h1><p>[<a href="https://leetcode.com/problems/add-digits/" target="_blank" rel="external">LeetCode 258</a>] Given a non-negative integer <code>num</code>, repeatedly add all its digits until the result has only one digit.</p><h1 id="Submission"><a href="#Submission" class="headerlink" title="Submission"></a>Submission</h1><p>Find the digital root of any positive number. The solution appear periodically from 1 to 9.</p><figure class="highlight java"><figcaption><span>Java Submission</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">addDigits</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (num - <span class="number">1</span>) % <span class="number">9</span> + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol><li>Digital root <a href="https://en.wikipedia.org/wiki/Digital_root" target="_blank" rel="external">https://en.wikipedia.org/wiki/Digital_root</a></li></ol>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/13/LeetCode-OJ-66-Plus-One/" itemprop="url">
-                  LeetCode 66 Plus One
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-13T13:33:17+08:00" content="2016-03-13">
-              2016-03-13
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/13/LeetCode-OJ-66-Plus-One/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/13/LeetCode-OJ-66-Plus-One/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h1><p>[<a href="https://leetcode.com/problems/plus-one" target="_blank" rel="external">LeetCode 66</a>] Given a non-negative number represented as an array of digits, plus one to the number.</p><h1 id="Submission"><a href="#Submission" class="headerlink" title="Submission"></a>Submission</h1><figure class="highlight java"><figcaption><span>Java Submission</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] plusOne(<span class="keyword">int</span>[] digits) &#123;</span><br><span class="line">        <span class="keyword">boolean</span> allNine = <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; digits.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (digits[i] != <span class="number">9</span>) &#123;</span><br><span class="line">                allNine = <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (allNine) &#123;</span><br><span class="line">            <span class="keyword">int</span>[] newNumber = <span class="keyword">new</span> <span class="keyword">int</span>[digits.length+<span class="number">1</span>];</span><br><span class="line">            newNumber[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">return</span> newNumber;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = digits.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">                <span class="keyword">if</span> (digits[i] == <span class="number">9</span>) &#123;</span><br><span class="line">                    digits[i] = <span class="number">0</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    digits[i]++;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> digits;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/12/LeetCode-OJ-133-Clone-Graph/" itemprop="url">
-                  LeetCode 133 Clone Graph
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-12T19:48:09+08:00" content="2016-03-12">
-              2016-03-12
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/12/LeetCode-OJ-133-Clone-Graph/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/12/LeetCode-OJ-133-Clone-Graph/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h1><p>[<a href="https://leetcode.com/problems/clone-graph/" target="_blank" rel="external">LeetCode 133</a>] Clone an undirected graph.</p><h1 id="Submission"><a href="#Submission" class="headerlink" title="Submission"></a>Submission</h1><figure class="highlight java"><figcaption><span>Java Submission</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Definition for undirected graph.</span><br><span class="line"> * class UndirectedGraphNode &#123;</span><br><span class="line"> *     int label;</span><br><span class="line"> *     List&lt;UndirectedGraphNode&gt; neighbors;</span><br><span class="line"> *     UndirectedGraphNode(int x) &#123; label = x; neighbors = new ArrayList&lt;UndirectedGraphNode&gt;(); &#125;</span><br><span class="line"> * &#125;;</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> Map&lt;Integer, UndirectedGraphNode&gt; nodes = <span class="keyword">new</span> HashMap&lt;Integer, UndirectedGraphNode&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> UndirectedGraphNode <span class="title">cloneGraph</span><span class="params">(UndirectedGraphNode node)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (node == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (nodes.containsKey(node.label)) &#123;</span><br><span class="line">            <span class="keyword">return</span> nodes.get(node.label);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        UndirectedGraphNode cloneNode = <span class="keyword">new</span> UndirectedGraphNode(node.label);</span><br><span class="line">        nodes.put(node.label, cloneNode);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (UndirectedGraphNode neigblor: node.neighbors) &#123;</span><br><span class="line">            UndirectedGraphNode cloneNeigblor = cloneGraph(neigblor);</span><br><span class="line">            cloneNode.neighbors.add(cloneNeigblor);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> cloneNode;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/12/Setting-up-a-blog-with-Hexo-using-GitHub-Pages/" itemprop="url">
-                  Setting up a blog with Hexo using GitHub Pages
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-12T16:24:00+08:00" content="2016-03-12">
-              2016-03-12
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/12/Setting-up-a-blog-with-Hexo-using-GitHub-Pages/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/12/Setting-up-a-blog-with-Hexo-using-GitHub-Pages/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>This articles will show you how to setup a blog with <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>, a blog framework built with Node.js, and publish it to GitHub.</p><h1 id="Setting-up-Hexo-and-host-it-in-GitHub"><a href="#Setting-up-Hexo-and-host-it-in-GitHub" class="headerlink" title="Setting up Hexo and host it in GitHub"></a>Setting up Hexo and host it in GitHub</h1><h2 id="Dependencies"><a href="#Dependencies" class="headerlink" title="Dependencies"></a>Dependencies</h2><ol><li>Node.js <a href="https://nodejs.org" target="_blank" rel="external">https://nodejs.org</a></li><li>Git Bash <a href="https://git-scm.com" target="_blank" rel="external">https://git-scm.com</a> or others git tools available online</li></ol><h2 id="Install-Hexo"><a href="#Install-Hexo" class="headerlink" title="Install Hexo"></a>Install Hexo</h2><ol><li><p>Install Hexo, run the following command in git-bash</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /your hexo directory/</span><br><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure><blockquote><p>make sure you included the npm directory in your <code>PATH</code> variable</p><pre><code>;C:\Program Files\nodejs\node_modules\npm
-</code></pre></blockquote></li><li><p>Once Hexo is installed, initialize Hexo</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure><blockquote><p>following files will be created</p><pre><code>.
-├── _config.yml
-├── package.json
-├── scaffolds
-├── source
-|   ├── _drafts
-|   └── _posts
-└── themes
-</code></pre></blockquote></li><li><p>The site is then ready for deploy</p></li></ol><h2 id="Start-Hexo-in-local-environment"><a href="#Start-Hexo-in-local-environment" class="headerlink" title="Start Hexo in local environment"></a>Start Hexo in local environment</h2><ul><li><p>After installing Hexo, you might want to have a look of the website, you can run the following command</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></li><li><p>Server will be started and it can be accessed by using <code>http://localhost:4000</code></p></li></ul><h2 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h2><ul><li>Generating static files with the following command<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></li></ul><h2 id="Deploy-to-GitHub-Pages"><a href="#Deploy-to-GitHub-Pages" class="headerlink" title="Deploy to GitHub Pages"></a>Deploy to GitHub Pages</h2><ol><li><p>create a new github repository with name <code>(you github username).github.io</code></p></li><li><p>update global setting of hexo <code>_config.yml</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: link to your github repository</span><br></pre></td></tr></table></figure></li><li><p>Then run the following command to deploy your Hexo site to gitHub</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></li><li><p>you will be able you visit the site with <code>http://(you github username).github.io</code></p></li></ol><hr><h1 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h1><h2 id="Adding-a-new-post"><a href="#Adding-a-new-post" class="headerlink" title="Adding a new post"></a>Adding a new post</h2><ol><li><p>Run the following command</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new post <span class="string">"My First Blog Post"</span></span><br></pre></td></tr></table></figure></li><li><p>start blogging by editing the newly created markdown file in <code>&lt;Hexo directory&gt;/source/_posts</code></p></li><li><p>regenerate the static files</p></li><li><p>deploy the changes to remote server if needed</p></li></ol><h2 id="Deleting-an-existing-post"><a href="#Deleting-an-existing-post" class="headerlink" title="Deleting an existing post"></a>Deleting an existing post</h2><ol><li>remove the unwanted post in <code>&lt;Hexo directory&gt;/source/_posts</code></li></ol><h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><ol><li>Hexo <a href="http://hexo.io" target="_blank" rel="external">http://hexo.io</a></li><li>GitHub Pages <a href="https://pages.github.com" target="_blank" rel="external">https://pages.github.com</a></li></ol>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -814,7 +714,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -824,7 +724,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -979,6 +879,29 @@
   
   
   
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
