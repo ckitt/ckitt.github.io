@@ -57,16 +57,16 @@
 
 
 
-<meta name="description" content="Question[LeetCode 112] Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.SubmissionJava Submission1234">
+<meta name="description" content="Question[LeetCode 26] Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.SubmissionJava Submission12345678910111213141516171819publi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode OJ 112 Path Sum">
-<meta property="og:url" content="http://ckitt.github.io/2016/03/20/LeetCode-OJ-112-Path-Sum/index.html">
+<meta property="og:title" content="LeetCode OJ 26 Remove Duplicates from Sorted Array">
+<meta property="og:url" content="http://ckitt.github.io/2016/03/26/LeetCode-OJ-26-Remove-Duplicates-from-Sorted-Array/index.html">
 <meta property="og:site_name" content="ckitt's Notes">
-<meta property="og:description" content="Question[LeetCode 112] Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.SubmissionJava Submission1234">
-<meta property="og:updated_time" content="2016-03-20T06:02:46.522Z">
+<meta property="og:description" content="Question[LeetCode 26] Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.SubmissionJava Submission12345678910111213141516171819publi">
+<meta property="og:updated_time" content="2016-03-26T06:04:27.415Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode OJ 112 Path Sum">
-<meta name="twitter:description" content="Question[LeetCode 112] Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.SubmissionJava Submission1234">
+<meta name="twitter:title" content="LeetCode OJ 26 Remove Duplicates from Sorted Array">
+<meta name="twitter:description" content="Question[LeetCode 26] Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.SubmissionJava Submission12345678910111213141516171819publi">
 
 
 
@@ -84,7 +84,7 @@
   };
 </script>
 
-  <title> LeetCode OJ 112 Path Sum | ckitt's Notes </title>
+  <title> LeetCode OJ 26 Remove Duplicates from Sorted Array | ckitt's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -213,7 +213,7 @@
             
             
               
-                LeetCode OJ 112 Path Sum
+                LeetCode OJ 26 Remove Duplicates from Sorted Array
               
             
           </h1>
@@ -225,8 +225,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-20T14:00:21+08:00" content="2016-03-20">
-              2016-03-20
+            <time itemprop="dateCreated" datetime="2016-03-26T14:03:08+08:00" content="2016-03-26">
+              2016-03-26
             </time>
           </span>
 
@@ -236,8 +236,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/20/LeetCode-OJ-112-Path-Sum/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/20/LeetCode-OJ-112-Path-Sum/" itemprop="commentsCount"></span>
+                <a href="/2016/03/26/LeetCode-OJ-26-Remove-Duplicates-from-Sorted-Array/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/26/LeetCode-OJ-26-Remove-Duplicates-from-Sorted-Array/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -259,7 +259,7 @@
       
 
       
-        <h1 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h1><p>[<a href="https://leetcode.com/problems/path-sum/" target="_blank" rel="external">LeetCode 112</a>] Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.</p><h1 id="Submission"><a href="#Submission" class="headerlink" title="Submission"></a>Submission</h1><figure class="highlight java"><figcaption><span>Java Submission</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * public class TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode left;</span><br><span class="line"> *     TreeNode right;</span><br><span class="line"> *     TreeNode(int x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasPathSum</span><span class="params">(TreeNode root, <span class="keyword">int</span> sum)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (root.left == <span class="keyword">null</span> &amp;&amp; root.right == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> (root.val == sum);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> hasPathSum(root.left, sum - root.val) || hasPathSum(root.right, sum - root.val);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h1><p>[<a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/" target="_blank" rel="external">LeetCode 26</a>] Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.</p><h1 id="Submission"><a href="#Submission" class="headerlink" title="Submission"></a>Submission</h1><figure class="highlight java"><figcaption><span>Java Submission</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums.length == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> length = <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> k = i; k &lt; nums.length; k++) &#123;</span><br><span class="line">                i = k;</span><br><span class="line">                <span class="keyword">if</span> (nums[k] != nums[length-<span class="number">1</span>]) &#123;</span><br><span class="line">                    nums[length++] = nums[k];</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> length;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -284,17 +284,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/19/LeetCode-OJ-300-Longest-Increasing-Subsequence/" rel="next" title="LeetCode OJ 300 Longest Increasing Subsequence">
-                <i class="fa fa-chevron-left"></i> LeetCode OJ 300 Longest Increasing Subsequence
+              <a href="/2016/03/20/LeetCode-OJ-182-Duplicate-Emails/" rel="next" title="LeetCode OJ 182 Duplicate Emails">
+                <i class="fa fa-chevron-left"></i> LeetCode OJ 182 Duplicate Emails
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/20/LeetCode-OJ-153-Find-Minimum-in-Rotated-Sorted-Array/" rel="prev" title="LeetCode OJ 153 Find Minimum in Rotated Sorted Array">
-                LeetCode OJ 153 Find Minimum in Rotated Sorted Array <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -690,9 +686,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'ckittNotes';
-      var disqus_identifier = '2016/03/20/LeetCode-OJ-112-Path-Sum/';
-      var disqus_title = 'LeetCode OJ 112 Path Sum';
-      var disqus_url = 'http://ckitt.github.io/2016/03/20/LeetCode-OJ-112-Path-Sum/';
+      var disqus_identifier = '2016/03/26/LeetCode-OJ-26-Remove-Duplicates-from-Sorted-Array/';
+      var disqus_title = 'LeetCode OJ 26 Remove Duplicates from Sorted Array';
+      var disqus_url = 'http://ckitt.github.io/2016/03/26/LeetCode-OJ-26-Remove-Duplicates-from-Sorted-Array/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');

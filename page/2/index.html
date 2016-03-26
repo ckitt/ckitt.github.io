@@ -215,6 +215,196 @@
             
               
                 
+                <a class="post-title-link" href="/2016/03/17/LeetCode-OJ-334-Increasing-Triplet-Subsequence/" itemprop="url">
+                  LeetCode OJ 334 Increasing Triplet Subsequence
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-03-17T23:08:56+08:00" content="2016-03-17">
+              2016-03-17
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/17/LeetCode-OJ-334-Increasing-Triplet-Subsequence/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/17/LeetCode-OJ-334-Increasing-Triplet-Subsequence/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h1><p>[<a href="https://leetcode.com/problems/increasing-triplet-subsequence/" target="_blank" rel="external">LeetCode 334</a>] Given an unsorted array return whether an increasing subsequence of length 3 exists or not in the array.</p><h1 id="Submission"><a href="#Submission" class="headerlink" title="Submission"></a>Submission</h1><p>Using dynamic programming, find if there exist increasing subsequence with length greater than or equal to 3</p><figure class="highlight java"><figcaption><span>Java Submission</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">increasingTriplet</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums.length &lt; <span class="number">3</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span>[] length = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length.length; i++) &#123;</span><br><span class="line">            length[i] = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (nums[j] &lt; nums[i] &amp;&amp; length[j] + <span class="number">1</span> &gt; length[i]) &#123;</span><br><span class="line">                    length[i] = length[j] + <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (length[i] &gt;= <span class="number">3</span>) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/15/LeetCode-OJ-100-Same-Tree/" itemprop="url">
+                  LeetCode OJ 100 Same Tree
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-03-15T22:19:28+08:00" content="2016-03-15">
+              2016-03-15
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/15/LeetCode-OJ-100-Same-Tree/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/15/LeetCode-OJ-100-Same-Tree/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h1><p>[<a href="https://leetcode.com/problems/same-tree/" target="_blank" rel="external">LeetCode 100</a>] Given two binary trees, write a function to check if they are equal or not.</p><h1 id="Submission"><a href="#Submission" class="headerlink" title="Submission"></a>Submission</h1><figure class="highlight java"><figcaption><span>Java Submission</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * public class TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode left;</span><br><span class="line"> *     TreeNode right;</span><br><span class="line"> *     TreeNode(int x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSameTree</span><span class="params">(TreeNode p, TreeNode q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (p == <span class="keyword">null</span> &amp;&amp; q == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (p == <span class="keyword">null</span> || q == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (p.val != q.val) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">return</span> (isSameTree(p.left, q.left) &amp;&amp; isSameTree(p.right, q.right));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/13/LeetCode-OJ-258-Add-Digits/" itemprop="url">
                   LeetCode 258 Add Digits
                 </a>
@@ -479,115 +669,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/12/Setting-up-a-blog-with-Hexo-using-GitHub-Pages/" itemprop="url">
-                  Setting up a blog with Hexo using GitHub Pages
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-12T16:24:00+08:00" content="2016-03-12">
-              2016-03-12
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/12/Setting-up-a-blog-with-Hexo-using-GitHub-Pages/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/12/Setting-up-a-blog-with-Hexo-using-GitHub-Pages/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>This articles will show you how to setup a blog with <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>, a blog framework built with Node.js, and publish it to GitHub.</p><h1 id="Setting-up-Hexo-and-host-it-in-GitHub"><a href="#Setting-up-Hexo-and-host-it-in-GitHub" class="headerlink" title="Setting up Hexo and host it in GitHub"></a>Setting up Hexo and host it in GitHub</h1><h2 id="Dependencies"><a href="#Dependencies" class="headerlink" title="Dependencies"></a>Dependencies</h2><ol><li>Node.js <a href="https://nodejs.org" target="_blank" rel="external">https://nodejs.org</a></li><li>Git Bash <a href="https://git-scm.com" target="_blank" rel="external">https://git-scm.com</a> or others git tools available online</li></ol><h2 id="Install-Hexo"><a href="#Install-Hexo" class="headerlink" title="Install Hexo"></a>Install Hexo</h2><ol><li><p>Install Hexo, run the following command in git-bash</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /your hexo directory/</span><br><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure><blockquote><p>make sure you included the npm directory in your <code>PATH</code> variable</p><pre><code>;C:\Program Files\nodejs\node_modules\npm
-</code></pre></blockquote></li><li><p>Once Hexo is installed, initialize Hexo</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure><blockquote><p>following files will be created</p><pre><code>.
-├── _config.yml
-├── package.json
-├── scaffolds
-├── source
-|   ├── _drafts
-|   └── _posts
-└── themes
-</code></pre></blockquote></li><li><p>The site is then ready for deploy</p></li></ol><h2 id="Start-Hexo-in-local-environment"><a href="#Start-Hexo-in-local-environment" class="headerlink" title="Start Hexo in local environment"></a>Start Hexo in local environment</h2><ul><li><p>After installing Hexo, you might want to have a look of the website, you can run the following command</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></li><li><p>Server will be started and it can be accessed by using <code>http://localhost:4000</code></p></li></ul><h2 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h2><ul><li>Generating static files with the following command<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></li></ul><h2 id="Deploy-to-GitHub-Pages"><a href="#Deploy-to-GitHub-Pages" class="headerlink" title="Deploy to GitHub Pages"></a>Deploy to GitHub Pages</h2><ol><li><p>create a new github repository with name <code>(you github username).github.io</code></p></li><li><p>update global setting of hexo <code>_config.yml</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: link to your github repository</span><br></pre></td></tr></table></figure></li><li><p>Then run the following command to deploy your Hexo site to gitHub</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></li><li><p>you will be able you visit the site with <code>http://(you github username).github.io</code></p></li></ol><hr><h1 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h1><h2 id="Adding-a-new-post"><a href="#Adding-a-new-post" class="headerlink" title="Adding a new post"></a>Adding a new post</h2><ol><li><p>Run the following command</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new post <span class="string">"My First Blog Post"</span></span><br></pre></td></tr></table></figure></li><li><p>start blogging by editing the newly created markdown file in <code>&lt;Hexo directory&gt;/source/_posts</code></p></li><li><p>regenerate the static files</p></li><li><p>deploy the changes to remote server if needed</p></li></ol><h2 id="Deleting-an-existing-post"><a href="#Deleting-an-existing-post" class="headerlink" title="Deleting an existing post"></a>Deleting an existing post</h2><ol><li>remove the unwanted post in <code>&lt;Hexo directory&gt;/source/_posts</code></li></ol><h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><ol><li>Hexo <a href="http://hexo.io" target="_blank" rel="external">http://hexo.io</a></li><li>GitHub Pages <a href="https://pages.github.com" target="_blank" rel="external">https://pages.github.com</a></li></ol>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -628,7 +714,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -638,7 +724,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
