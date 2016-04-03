@@ -215,6 +215,101 @@
             
               
                 
+                <a class="post-title-link" href="/2016/03/19/LeetCode-OJ-300-Longest-Increasing-Subsequence/" itemprop="url">
+                  LeetCode OJ 300 Longest Increasing Subsequence
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-03-19T11:51:17+08:00" content="2016-03-19">
+              2016-03-19
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/19/LeetCode-OJ-300-Longest-Increasing-Subsequence/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/19/LeetCode-OJ-300-Longest-Increasing-Subsequence/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h1><p>[<a href="https://leetcode.com/problems/longest-increasing-subsequence/" target="_blank" rel="external">LeetCode 300</a>] Given an unsorted array of integers, find the length of longest increasing subsequence.</p><h1 id="Submission"><a href="#Submission" class="headerlink" title="Submission"></a>Submission</h1><p>Similar to <a href="/2016/03/17/LeetCode-OJ-334-Increasing-Triplet-Subsequence/" title="[LeetCode 334]">[LeetCode 334]</a>, solve the question by using dynamic programming, and the algorithm run in $O(n^2)$ time and can be speed up to $O(nlogn)$ by using binary search.</p><h2 id="Solve-with-dynamic-programming"><a href="#Solve-with-dynamic-programming" class="headerlink" title="Solve with dynamic programming"></a>Solve with dynamic programming</h2><p>The easiest solution which take $O(n^2)$ running time<br><figure class="highlight java"><figcaption><span>Java Submission</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLIS</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] length = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            length[i] = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (nums[i] &gt; nums[j] &amp;&amp; length[j] + <span class="number">1</span> &gt; length[i]) &#123;</span><br><span class="line">                    length[i] = length[j] + <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> maxLength = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (length[i] &gt; maxLength) &#123;</span><br><span class="line">                maxLength = length[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxLength;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2 id="Solve-with-binary-search"><a href="#Solve-with-binary-search" class="headerlink" title="Solve with binary search"></a>Solve with binary search</h2><p>By using binary search the running time can be reduced to $O(nlogn)$</p><figure class="highlight java"><figcaption><span>Java Submission</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLIS</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> maxLength = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span>[] lastIndex = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length+<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> lo = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">int</span> hi = maxLength;</span><br><span class="line">            <span class="keyword">while</span> (lo &lt;= hi) &#123;</span><br><span class="line">                <span class="keyword">int</span> mid = (lo + hi) / <span class="number">2</span>;</span><br><span class="line">                <span class="keyword">if</span> (nums[lastIndex[mid]] &lt; nums[i]) &#123;</span><br><span class="line">                    lo = mid + <span class="number">1</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    hi = mid - <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">int</span> newLength = lo;</span><br><span class="line"></span><br><span class="line">            lastIndex[newLength] = i;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (newLength &gt; maxLength) &#123;</span><br><span class="line">                maxLength = newLength;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> maxLength;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h3><p>Using an addition array <code>lastIndex</code> to store the index of the last elements of possible increasing subsequences in <code>nums</code>, <code>lastIndex[j]</code> representing the index of the smallest elements in <code>nums</code> in the subsequences with <code>length = j</code>. <code>maxLength</code> will be used to mark the maximum length of the increasing subsequence in the current iteration.</p><img src="/2016/03/19/LeetCode-OJ-300-Longest-Increasing-Subsequence/img1.png" alt="nums = {9, 8, 2, 5, 3, 7, 19, 11, 9} and i = 8" title="nums = {9, 8, 2, 5, 3, 7, 19, 11, 9} and i = 8"><p>When <code>maxLength = 5</code>, this</p><table><thead><tr><th><code>i</code></th><th><code>lastIndex[i]</code></th><th>Representing Sequence</th></tr></thead><tbody><tr><td>0</td><td>-</td><td>-</td></tr><tr><td>1</td><td>2</td><td>2</td></tr><tr><td>2</td><td>4</td><td>2, 3</td></tr><tr><td>3</td><td>5</td><td>2, 3, 7</td></tr><tr><td>5</td><td>6</td><td>2, 3, 6</td></tr></tbody></table><p>For each iteration, we would like to know whether <code>nums[i]</code> will generate a longer/better increasing subsequences. By using binary search, to find the maximum length <code>l</code> of a subsequences where its last number is just smaller than <code>nums[i]</code>, and because the last value of the sequence represented by <code>lastIndex[l+1]</code> is less than the <code>nums[i]</code> (i.e <code>nums[lastIndex[l+1]] &gt; nums[i]</code>), thus, it generate a better increasing subsequences with <code>length = l+1</code>, and <code>lastIndex[l+1]</code> will be updated. If <code>l+1</code> is greater than the current maximun length, it indicates that a longer increasing subsequence can be found.</p><h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><ol><li>Longest Increasing Subsequence <a href="https://en.wikipedia.org/wiki/Longest_increasing_subsequence" target="_blank" rel="external">https://en.wikipedia.org/wiki/Longest_increasing_subsequence</a></li></ol>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/17/LeetCode-OJ-334-Increasing-Triplet-Subsequence/" itemprop="url">
                   LeetCode OJ 334 Increasing Triplet Subsequence
                 </a>
@@ -574,101 +669,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/12/LeetCode-OJ-133-Clone-Graph/" itemprop="url">
-                  LeetCode 133 Clone Graph
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-12T19:48:09+08:00" content="2016-03-12">
-              2016-03-12
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/12/LeetCode-OJ-133-Clone-Graph/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/12/LeetCode-OJ-133-Clone-Graph/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h1><p>[<a href="https://leetcode.com/problems/clone-graph/" target="_blank" rel="external">LeetCode 133</a>] Clone an undirected graph.</p><h1 id="Submission"><a href="#Submission" class="headerlink" title="Submission"></a>Submission</h1><figure class="highlight java"><figcaption><span>Java Submission</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Definition for undirected graph.</span><br><span class="line"> * class UndirectedGraphNode &#123;</span><br><span class="line"> *     int label;</span><br><span class="line"> *     List&lt;UndirectedGraphNode&gt; neighbors;</span><br><span class="line"> *     UndirectedGraphNode(int x) &#123; label = x; neighbors = new ArrayList&lt;UndirectedGraphNode&gt;(); &#125;</span><br><span class="line"> * &#125;;</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> Map&lt;Integer, UndirectedGraphNode&gt; nodes = <span class="keyword">new</span> HashMap&lt;Integer, UndirectedGraphNode&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> UndirectedGraphNode <span class="title">cloneGraph</span><span class="params">(UndirectedGraphNode node)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (node == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (nodes.containsKey(node.label)) &#123;</span><br><span class="line">            <span class="keyword">return</span> nodes.get(node.label);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        UndirectedGraphNode cloneNode = <span class="keyword">new</span> UndirectedGraphNode(node.label);</span><br><span class="line">        nodes.put(node.label, cloneNode);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (UndirectedGraphNode neigblor: node.neighbors) &#123;</span><br><span class="line">            UndirectedGraphNode cloneNeigblor = cloneGraph(neigblor);</span><br><span class="line">            cloneNode.neighbors.add(cloneNeigblor);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> cloneNode;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -714,7 +714,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>

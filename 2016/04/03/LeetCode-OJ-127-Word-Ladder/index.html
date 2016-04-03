@@ -1,0 +1,733 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="Question[LeetCode 127] Given two words (beginWord and endWord), and a dictionary’s word list, find the length of shortest transformation sequence from beginWord to endWord, such that:Only one letter c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode OJ 127 Word Ladder">
+<meta property="og:url" content="http://ckitt.github.io/2016/04/03/LeetCode-OJ-127-Word-Ladder/index.html">
+<meta property="og:site_name" content="ckitt's Notes">
+<meta property="og:description" content="Question[LeetCode 127] Given two words (beginWord and endWord), and a dictionary’s word list, find the length of shortest transformation sequence from beginWord to endWord, such that:Only one letter c">
+<meta property="og:updated_time" content="2016-04-03T06:35:35.879Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LeetCode OJ 127 Word Ladder">
+<meta name="twitter:description" content="Question[LeetCode 127] Given two words (beginWord and endWord), and a dictionary’s word list, find the length of shortest transformation sequence from beginWord to endWord, such that:Only one letter c">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> LeetCode OJ 127 Word Ladder | ckitt's Notes </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-75029359-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">ckitt's Notes</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                LeetCode OJ 127 Word Ladder
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-04-03T12:49:04+08:00" content="2016-04-03">
+              2016-04-03
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/03/LeetCode-OJ-127-Word-Ladder/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/03/LeetCode-OJ-127-Word-Ladder/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h1><p>[<a href="https://leetcode.com/problems/word-ladder/" target="_blank" rel="external">LeetCode 127</a>] Given two words (beginWord and endWord), and a dictionary’s word list, find the length of shortest transformation sequence from beginWord to endWord, such that:</p><ol><li>Only one letter can be changed at a time</li><li>Each intermediate word must exist in the word list</li></ol><p>For example,</p><p>Given:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;beginWord = <code>&quot;hit&quot;</code><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;endWord = <code>&quot;cog&quot;</code><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wordList = <code>[&quot;hot&quot;,&quot;dot&quot;,&quot;dog&quot;,&quot;lot&quot;,&quot;log&quot;]</code><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As one shortest transformation is <code>&quot;hit&quot; -&gt; &quot;hot&quot; -&gt; &quot;dot&quot; -&gt; &quot;dog&quot; -&gt; &quot;cog&quot;</code>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return its length <code>5</code>.</p><h1 id="The-journey-to-Accept"><a href="#The-journey-to-Accept" class="headerlink" title="The journey to Accept"></a>The journey to Accept</h1><p>I spent lots of time on this question, as I hit Time Limit Exceeded in the first few trials and it confused me a lot. Thus I would like to take this opportunity to summarized what I’ve learnt.</p><h2 id="Correct-BFS-Solution-but-it’s-bad"><a href="#Correct-BFS-Solution-but-it’s-bad" class="headerlink" title="Correct BFS Solution, but it’s bad!"></a>Correct BFS Solution, but it’s bad!</h2><p>First of all, this question is trival for most of us, it’s just a basic graph traversal problem, we consider the word lists a graph, whereas each word in the word list is a node, and we add an edges to connect both nodes if both nodes are only different in one character.</p><p>The shortest transformation from <code>beginWord</code> to <code>endWord</code> are actually the shorest path from <code>beginWord</code> to <code>endWord</code>, and we know that BFS is the best fit for this kind of problem.</p><p>Thus, <code>connected(String s1, String s2)</code> was implemented to determine whether two nodes(words) are actually connected.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">connected</span><span class="params">(String s1, String s2)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> diff = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s1.length(); i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (s1.charAt(i) != s2.charAt(i)) &#123;</span><br><span class="line">            diff++;</span><br><span class="line">            <span class="keyword">if</span> (diff &gt; <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (diff == <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>And we iterate <code>wordList</code> just as the normal BFS does. Add a queue, blar blar blar…<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">ladderLength</span><span class="params">(String beginWord, String endWord, Set&lt;String&gt; wordList)</span> </span>&#123;</span><br><span class="line">    TreeSet&lt;String&gt; visited = <span class="keyword">new</span> TreeSet&lt;String&gt;();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> depth = <span class="number">1</span>;</span><br><span class="line">    Queue&lt;String&gt; bfsQueue = <span class="keyword">new</span> LinkedList&lt;String&gt;();</span><br><span class="line">    bfsQueue.add(beginWord);</span><br><span class="line">    TreeSet&lt;String&gt; nextLayer = <span class="keyword">new</span> TreeSet&lt;String&gt;();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (!bfsQueue.isEmpty()) &#123;</span><br><span class="line">        String currWord = bfsQueue.poll();</span><br><span class="line">        System.out.println(currWord);</span><br><span class="line">        <span class="keyword">if</span> (connected(currWord, endWord)) &#123;</span><br><span class="line">            <span class="keyword">return</span> depth+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (String word : wordList) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!visited.contains(word) &amp;&amp; connected(word, currWord)) &#123;</span><br><span class="line">                nextLayer.add(word);</span><br><span class="line">                visited.add(currWord);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (bfsQueue.isEmpty()) &#123;</span><br><span class="line">            bfsQueue.addAll(nextLayer);</span><br><span class="line">            nextLayer.clear();</span><br><span class="line">            depth++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>We use a queue <code>bfsQueue</code> to store the word to be traversed. Since we need to find the shorstest path from source to destination, we need to measure the depth of the traversal. Thus, we insert an empty String each time to separate the nodes in each level</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (bfsQueue.isEmpty()) &#123;</span><br><span class="line">    bfsQueue.addAll(nextLayer);</span><br><span class="line">    nextLayer.clear();</span><br><span class="line">    depth++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>And up to this stage, I finally get a correct implementation but a bad one. Soon I’ve found that this submission so dump that it can’t even beat the test case with around 600 words. Therefore, impovement has to be make for better timing.</p><h2 id="Improve-the-solution-with-2-way-BFS"><a href="#Improve-the-solution-with-2-way-BFS" class="headerlink" title="Improve the solution with 2-way BFS"></a>Improve the solution with 2-way BFS</h2><p>After a little bit of google-ing, I’ve found a way to speed up BFS would be using 2-way BFS, which we not only traverse the graph from source to destination, but also from destination to source. The main idea is that we reduece the number of nodes to be traversed, as less nodes is expended during BFS traversal.</p><figure class="highlight java"><figcaption><span>2-way BFS</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">ladderLength</span><span class="params">(String beginWord, String endWord, Set&lt;String&gt; wordList)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> listSize = wordList.size();</span><br><span class="line">    <span class="keyword">int</span>[] visited = <span class="keyword">new</span> <span class="keyword">int</span>[listSize+<span class="number">2</span>];</span><br><span class="line">    String[] wordListArr = <span class="keyword">new</span> String[listSize+<span class="number">2</span>];</span><br><span class="line">    wordListArr = wordList.toArray(wordListArr);</span><br><span class="line">    </span><br><span class="line">    wordListArr[listSize] = beginWord;</span><br><span class="line">    visited[listSize] = <span class="number">1</span>;	<span class="comment">// forward</span></span><br><span class="line">    wordListArr[listSize+<span class="number">1</span>] = endWord;</span><br><span class="line">    visited[listSize+<span class="number">1</span>] = -<span class="number">1</span>;	<span class="comment">// backward</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> forwardDepth = <span class="number">1</span>;</span><br><span class="line">    Queue&lt;Integer&gt; forwardQueue = <span class="keyword">new</span> LinkedList&lt;Integer&gt;();</span><br><span class="line">    forwardQueue.add(listSize);</span><br><span class="line">    forwardQueue.add(-<span class="number">1</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> backwardDepth = <span class="number">1</span>;</span><br><span class="line">    Queue&lt;Integer&gt; backwardQueue = <span class="keyword">new</span> LinkedList&lt;Integer&gt;();</span><br><span class="line">    backwardQueue.add(listSize+<span class="number">1</span>);</span><br><span class="line">    backwardQueue.add(-<span class="number">1</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> currentSerchingDir = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (!forwardQueue.isEmpty() &amp;&amp; !backwardQueue.isEmpty()) &#123;</span><br><span class="line">        Integer currWord = currentSerchingDir == <span class="number">1</span> ? forwardQueue.poll() : backwardQueue.poll();</span><br><span class="line">        <span class="keyword">if</span> (currWord &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; wordListArr.length; i++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (visited[i] != currentSerchingDir) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (connected(wordListArr[i], wordListArr[currWord])) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (visited[i] == <span class="number">0</span>) &#123;</span><br><span class="line">                            <span class="keyword">if</span> (currentSerchingDir == <span class="number">1</span>) &#123;</span><br><span class="line">                                forwardQueue.add(i);</span><br><span class="line">                            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                                backwardQueue.add(i);</span><br><span class="line">                            &#125;</span><br><span class="line">                            visit++;</span><br><span class="line">                            visited[i] = currentSerchingDir;</span><br><span class="line">                        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                            <span class="keyword">return</span> forwardDepth + backwardDepth;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (!forwardQueue.isEmpty() || !forwardQueue.isEmpty()) &#123;</span><br><span class="line">            System.out.println(currentSerchingDir);</span><br><span class="line">            <span class="keyword">if</span> (currentSerchingDir == <span class="number">1</span>) &#123;</span><br><span class="line">                forwardDepth++;</span><br><span class="line">                forwardQueue.add(-<span class="number">1</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                backwardDepth++;</span><br><span class="line">                backwardQueue.add(-<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            currentSerchingDir *= -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>2 queues are used this time, one for the forward traversial and one for backward traversial, and swap the treavre direction after each iteration. Besides, I’ve also used a boolean array <code>visited</code> to indicate whether a particular nodes have been traversed, etc.</p><p>The results are positive, it did improved the run time, and the 600-word test cases are beated, but this time it fail the 4000-word test cases. More have to be done to get to our goal.</p><h2 id="Not-to-loop-through-the-whole-word-list"><a href="#Not-to-loop-through-the-whole-word-list" class="headerlink" title="Not to loop through the whole word list"></a>Not to loop through the whole word list</h2><p>One of the major problem in the previous submissions are it need to check too many nodes in each layers<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; wordListArr.length; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (visited[i] != currentSerchingDir) &#123;</span><br><span class="line">        <span class="keyword">if</span> (connected(wordListArr[i], wordListArr[currWord])) &#123;</span><br><span class="line">            <span class="keyword">if</span> (visited[i] == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (currentSerchingDir == <span class="number">1</span>) &#123;</span><br><span class="line">                    forwardQueue.add(i);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    backwardQueue.add(i);</span><br><span class="line">                &#125;</span><br><span class="line">                visit++;</span><br><span class="line">                visited[i] = currentSerchingDir;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> forwardDepth + backwardDepth;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>In each iteration, It will check the words in the wordlist to see whether two nodes should be connected, it take $O(kn)$ time to findout the where $k$ is the number of nodes traversed, which in worse case we have $O(n^2)$ running time (i.e. each node are only travered once), which is clearly not acceptable.</p><p>But, how we can avoid these stupid traveral? One key observation will help. The maximun number of outgoing edges that a node can have will be $len(s)*25$, as mentioned in the quesiton.<br><blockquote class="blockquote-center"><p>Only one letter can be changed at a time<br>Each intermediate word must exist in the word list</p></blockquote></p><p>As illustrated below, the word <code>abc</code> can be transformed to <code>bbc</code>, <code>cbc</code>, etc. The total number of outgoing edges are bounded. Thus, we can loop through all the possiblilty during each iteration, the time complexity reduced to $O(k* len(s) *25) =&gt; O(k* len(s))$.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">abc +- (b)bc</span><br><span class="line">    +- (c)bc</span><br><span class="line">    +- (d)bc</span><br><span class="line">     ...</span><br><span class="line">    +- (z)bc</span><br><span class="line">    +- a(a)c</span><br><span class="line">    +- a(c)c</span><br><span class="line">    +- a(d)c</span><br><span class="line">     ...</span><br><span class="line">    +- a(z)c</span><br><span class="line">    +- ab(a)</span><br><span class="line">    +- ab(b)</span><br><span class="line">    +- ab(d)</span><br><span class="line">     ...</span><br><span class="line">    +- ab(z)</span><br></pre></td></tr></table></figure></p><p>This is a very important observation and it leads to a huge improvement, and I finally get a green light from LeetCode after that.</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">Queue&lt;String&gt; currentQueue = forwardQueue;</span><br><span class="line">Queue&lt;String&gt; targetQueue = backwardQueue;</span><br><span class="line"><span class="keyword">while</span>(currentQueue.size() != <span class="number">0</span>) &#123;</span><br><span class="line">    String currentWord = currentQueue.poll();</span><br><span class="line">    <span class="keyword">if</span> (currentWord.length() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">char</span>[] currWordCharArr = currentWord.toCharArray();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; currentWord.length(); i++) &#123;</span><br><span class="line">            <span class="keyword">char</span> currOriginChar = currWordCharArr[i]; </span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">char</span> c = <span class="string">'a'</span>; c &lt;= <span class="string">'z'</span>; c++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (c != currOriginChar) &#123;</span><br><span class="line">                    currWordCharArr[i] = c;</span><br><span class="line">                    String s = <span class="keyword">new</span> String(currWordCharArr);</span><br><span class="line">                    <span class="keyword">if</span> (targetQueue.contains(s)) &#123;</span><br><span class="line">                        <span class="keyword">return</span> depth + <span class="number">1</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">if</span> (wordList.contains(s)) &#123;</span><br><span class="line">                        wordList.remove(s);</span><br><span class="line">                        currentQueue.add(s);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            currWordCharArr[i] = currOriginChar; </span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (forwardQueue.size() != <span class="number">0</span>) &#123;</span><br><span class="line">        depth++;</span><br><span class="line">        currentQueue.add(<span class="string">""</span>);</span><br><span class="line">        Queue&lt;String&gt; tmpQueue = currentQueue;</span><br><span class="line">        currentQueue = targetQueue;</span><br><span class="line">        targetQueue = tmpQueue;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>2-way BFS are used and with limited number of nodes to be traversed, we derived the possible-next-level nodes and check if it is a valid node instead of finding the next-level nodes from the list of nodes.</p><p>The above code are accepted by LeetCode and it run with 113 ms. It beats only 47.97% of the Java submission. And of course, we know we can do better!</p><h2 id="Further-optimization"><a href="#Further-optimization" class="headerlink" title="Further optimization"></a>Further optimization</h2><p>We final improvement to push the running time down to 32 ms which beats 93.11% Java submission by the following improvements:</p><ol><li>Use <code>HashMap</code> instead of <code>Queue</code> for storing the next level nodes.</li><li>Do not switch side after each iteration, instead, we choose the side with minimum number of node, so that we reduced the number of nodes traversed as much as possible</li></ol><p>And here come my final Submission…</p><h1 id="Final-Submission"><a href="#Final-Submission" class="headerlink" title="Final Submission"></a>Final Submission</h1><figure class="highlight java"><figcaption><span>Final Submission</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">ladderLength</span><span class="params">(String beginWord, String endWord, Set&lt;String&gt; wordList)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> depth = <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        Set&lt;String&gt; wordHashList = <span class="keyword">new</span> HashSet&lt;String&gt;();</span><br><span class="line">        wordHashList.addAll(wordList);</span><br><span class="line">        </span><br><span class="line">        Set&lt;String&gt; forward = <span class="keyword">new</span> HashSet&lt;String&gt;();</span><br><span class="line">        forward.add(beginWord);</span><br><span class="line">        </span><br><span class="line">        Set&lt;String&gt; backward = <span class="keyword">new</span> HashSet&lt;String&gt;();</span><br><span class="line">        backward.add(endWord);</span><br><span class="line">        </span><br><span class="line">        Set&lt;String&gt; currentSet = forward;</span><br><span class="line">        Set&lt;String&gt; targetSet = backward;</span><br><span class="line">        <span class="keyword">while</span>(currentSet.size() != <span class="number">0</span>) &#123;</span><br><span class="line">            Set&lt;String&gt; nextLevelSet = <span class="keyword">new</span> HashSet&lt;String&gt;();</span><br><span class="line">            <span class="keyword">for</span> (String currentWord : currentSet) &#123;</span><br><span class="line">                <span class="keyword">char</span>[] currWordCharArr = currentWord.toCharArray();</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; currentWord.length(); i++) &#123;</span><br><span class="line">                    <span class="keyword">char</span> currOriginChar = currWordCharArr[i]; </span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">char</span> c = <span class="string">'a'</span>; c &lt;= <span class="string">'z'</span>; c++) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (c != currOriginChar) &#123;</span><br><span class="line">                            currWordCharArr[i] = c;</span><br><span class="line">                            String s = <span class="keyword">new</span> String(currWordCharArr);</span><br><span class="line">                            <span class="keyword">if</span> (targetSet.contains(s)) &#123;</span><br><span class="line">                                <span class="keyword">return</span> depth + <span class="number">1</span>;</span><br><span class="line">                            &#125;</span><br><span class="line">                            <span class="keyword">if</span> (wordHashList.contains(s)) &#123;</span><br><span class="line">                                nextLevelSet.add(s);</span><br><span class="line">                                wordHashList.remove(s);</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    currWordCharArr[i] = currOriginChar; </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            depth++;</span><br><span class="line">            <span class="keyword">if</span> (nextLevelSet.size() &gt; targetSet.size()) &#123;</span><br><span class="line">                currentSet = targetSet;</span><br><span class="line">                targetSet = nextLevelSet;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                currentSet = nextLevelSet;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>Thanks for reading, please let me know if I can further improve the running time in the comment section! I am always looking for improvement.</p>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/26/LeetCode-OJ-26-Remove-Duplicates-from-Sorted-Array/" rel="next" title="LeetCode OJ 26 Remove Duplicates from Sorted Array">
+                <i class="fa fa-chevron-left"></i> LeetCode OJ 26 Remove Duplicates from Sorted Array
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars1.githubusercontent.com/u/1555418?v=3&s=460"
+               alt="ckitt" />
+          <p class="site-author-name" itemprop="name">ckitt</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+          
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ckitt" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Question"><span class="nav-number">1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-journey-to-Accept"><span class="nav-number">2.</span> <span class="nav-text">The journey to Accept</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Correct-BFS-Solution-but-it’s-bad"><span class="nav-number">2.1.</span> <span class="nav-text">Correct BFS Solution, but it’s bad!</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Improve-the-solution-with-2-way-BFS"><span class="nav-number">2.2.</span> <span class="nav-text">Improve the solution with 2-way BFS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Not-to-loop-through-the-whole-word-list"><span class="nav-number">2.3.</span> <span class="nav-text">Not to loop through the whole word list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Further-optimization"><span class="nav-number">2.4.</span> <span class="nav-text">Further optimization</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Final-Submission"><span class="nav-number">3.</span> <span class="nav-text">Final Submission</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ckitt</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'ckittNotes';
+      var disqus_identifier = '2016/04/03/LeetCode-OJ-127-Word-Ladder/';
+      var disqus_title = 'LeetCode OJ 127 Word Ladder';
+      var disqus_url = 'http://ckitt.github.io/2016/04/03/LeetCode-OJ-127-Word-Ladder/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+  
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+
+</body>
+</html>
